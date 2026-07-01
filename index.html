@@ -30,339 +30,122 @@
     padding: 24px 16px 60px;
   }
 
-  .header {
-    text-align: center;
-    padding: 40px 0 32px;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 32px;
-  }
-
-  .flag-strip {
-    display: flex;
-    justify-content: center;
-    gap: 4px;
-    margin-bottom: 20px;
-  }
-
+  .header { text-align: center; padding: 40px 0 32px; border-bottom: 1px solid var(--border); margin-bottom: 32px; }
+  .flag-strip { display: flex; justify-content: center; gap: 4px; margin-bottom: 20px; }
   .flag-cell { width: 18px; height: 18px; border-radius: 2px; }
   .flag-cell:nth-child(odd) { background: #fff; }
   .flag-cell:nth-child(even) { background: #111; }
-
   h1 { font-size: clamp(22px, 4vw, 36px); font-weight: 700; letter-spacing: -0.5px; line-height: 1.1; }
   h1 span { color: var(--accent); }
-
-  .countdown {
-    font-family: 'Space Mono', monospace;
-    font-size: 13px;
-    color: var(--muted);
-    margin-top: 10px;
-    letter-spacing: 1px;
-  }
+  .countdown { font-family: 'Space Mono', monospace; font-size: 13px; color: var(--muted); margin-top: 10px; letter-spacing: 1px; }
   .countdown strong { color: var(--accent); font-size: 15px; }
 
-  /* View toggle */
-  .view-toggle {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    margin: 20px 0 28px;
-  }
+  .view-toggle { display: flex; gap: 8px; justify-content: center; margin: 20px 0 28px; }
+  .view-btn { background: var(--surface); border: 1px solid var(--border); color: var(--muted); font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; padding: 8px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; letter-spacing: 0.3px; }
+  .view-btn.active { background: var(--accent); border-color: var(--accent); color: #000; }
 
-  .view-btn {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    color: var(--muted);
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    padding: 8px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.2s;
-    letter-spacing: 0.3px;
-  }
-
-  .view-btn.active {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: #000;
-  }
-
-  /* Stats */
-  .overall-progress {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px 24px;
-    margin-bottom: 28px;
-  }
-
-  .progress-label {
-    display: flex;
-    justify-content: space-between;
-    font-size: 13px;
-    color: var(--muted);
-    margin-bottom: 10px;
-    font-family: 'Space Mono', monospace;
-  }
-
+  .overall-progress { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 28px; }
+  .progress-label { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); margin-bottom: 10px; font-family: 'Space Mono', monospace; }
   .progress-label span:last-child { color: var(--accent); font-weight: 700; }
-
   .bar-track { background: var(--track); border-radius: 99px; height: 10px; overflow: hidden; }
-  .bar-fill {
-    height: 100%;
-    border-radius: 99px;
-    background: linear-gradient(90deg, var(--accent2), var(--accent));
-    transition: width 0.4s ease;
-  }
+  .bar-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--accent2), var(--accent)); transition: width 0.4s ease; }
 
-  .stats-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-bottom: 28px;
-  }
-
-  .stat-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px;
-    text-align: center;
-  }
-
-  .stat-num {
-    font-family: 'Space Mono', monospace;
-    font-size: clamp(20px, 3vw, 28px);
-    font-weight: 700;
-    color: var(--accent);
-  }
-
+  .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 28px; }
+  .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px; text-align: center; }
+  .stat-num { font-family: 'Space Mono', monospace; font-size: clamp(20px, 3vw, 28px); font-weight: 700; color: var(--accent); }
   .stat-label { font-size: 11px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
 
-  /* Phase header */
-  .phase-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 32px 0 16px;
-    flex-wrap: wrap;
-  }
-
-  .phase-badge {
-    background: var(--accent);
-    color: #000;
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 4px 10px;
-    border-radius: 4px;
-    letter-spacing: 1px;
-  }
-
+  .phase-header { display: flex; align-items: center; gap: 12px; margin: 32px 0 16px; flex-wrap: wrap; }
+  .phase-badge { background: var(--accent); color: #000; font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 4px; letter-spacing: 1px; }
   .phase-title { font-size: 18px; font-weight: 600; }
   .phase-dates { font-size: 12px; color: var(--muted); font-family: 'Space Mono', monospace; margin-left: auto; }
 
-  /* Week cards */
-  .week-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    margin-bottom: 12px;
-    overflow: hidden;
-    transition: border-color 0.2s;
-  }
-
+  .week-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; transition: border-color 0.2s; }
   .week-card.active-week { border-color: var(--accent); }
   .week-card.completed-week { border-color: var(--green); opacity: 0.75; }
 
-  .week-header {
-    display: flex;
-    align-items: center;
-    padding: 16px 20px;
-    cursor: pointer;
-    user-select: none;
-    gap: 14px;
-  }
-
-  .week-check {
-    width: 22px; height: 22px;
-    border-radius: 50%;
-    border: 2px solid var(--border);
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    font-size: 12px;
-    transition: all 0.2s;
-  }
+  .week-header { display: flex; align-items: center; padding: 16px 20px; cursor: pointer; user-select: none; gap: 14px; }
+  .week-check { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 12px; transition: all 0.2s; }
   .week-check.done { background: var(--green); border-color: var(--green); color: #000; }
   .week-check.current { border-color: var(--accent); background: rgba(232,184,75,0.1); }
-
   .week-info { flex: 1; }
   .week-label { font-size: 13px; font-weight: 600; font-family: 'Space Mono', monospace; color: var(--accent); }
   .week-dates { font-size: 12px; color: var(--muted); margin-top: 2px; }
-
   .week-toggle { color: var(--muted); font-size: 18px; transition: transform 0.2s; }
   .week-toggle.open { transform: rotate(180deg); }
-
   .week-body { padding: 0 20px 16px; display: none; }
   .week-body.open { display: block; }
 
-  .topic-section-label {
-    font-size: 10px; text-transform: uppercase; letter-spacing: 1px;
-    color: var(--muted); margin-bottom: 8px;
-    font-family: 'Space Mono', monospace;
-  }
-
+  .topic-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 8px; font-family: 'Space Mono', monospace; }
   .topic-list { list-style: none; }
 
-  .topic-item {
-    display: flex; align-items: flex-start; gap: 10px;
-    padding: 7px 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 14px; line-height: 1.4;
-    cursor: pointer;
-  }
+  .topic-item { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border); line-height: 1.4; }
   .topic-item:last-child { border-bottom: none; }
 
-  .topic-cb {
-    width: 16px; height: 16px;
-    border: 1.5px solid var(--border);
-    border-radius: 3px;
-    flex-shrink: 0; margin-top: 2px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 10px;
-    transition: all 0.15s;
-  }
+  .topic-cb { width: 16px; height: 16px; border: 1.5px solid var(--border); border-radius: 3px; flex-shrink: 0; margin-top: 3px; display: flex; align-items: center; justify-content: center; font-size: 10px; transition: all 0.15s; cursor: pointer; }
   .topic-cb.checked { background: var(--green); border-color: var(--green); color: #000; }
 
-  .topic-text.done-text { text-decoration: line-through; color: var(--muted); }
+  .topic-content { flex: 1; cursor: pointer; }
+  .topic-name { font-size: 14px; }
+  .topic-name.done-text { text-decoration: line-through; color: var(--muted); }
 
-  .daily-tip {
-    background: rgba(232,184,75,0.07);
-    border-left: 3px solid var(--accent);
-    border-radius: 0 6px 6px 0;
-    padding: 10px 14px;
-    font-size: 13px;
-    color: var(--muted);
-    margin-top: 10px;
+  .video-links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 5px; }
+  .video-link {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 3px 8px;
+    font-size: 11px;
+    color: var(--accent);
+    text-decoration: none;
+    font-family: 'Space Mono', monospace;
+    transition: all 0.15s;
+    cursor: pointer;
   }
+  .video-link:hover { background: rgba(232,184,75,0.12); border-color: var(--accent); }
+  .video-link svg { flex-shrink: 0; }
+
+  .daily-tip { background: rgba(232,184,75,0.07); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; padding: 10px 14px; font-size: 13px; color: var(--muted); margin-top: 10px; }
   .daily-tip strong { color: var(--accent); }
 
-  .current-badge {
-    background: var(--accent); color: #000;
-    font-size: 10px; font-weight: 700;
-    padding: 2px 7px; border-radius: 99px;
-    font-family: 'Space Mono', monospace;
-    letter-spacing: 0.5px; margin-left: 6px;
-  }
+  .current-badge { background: var(--accent); color: #000; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 99px; font-family: 'Space Mono', monospace; letter-spacing: 0.5px; margin-left: 6px; }
 
-  /* ===== DAY VIEW ===== */
+  /* DAY VIEW */
   #day-view { display: none; }
-
-  .day-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    margin-bottom: 10px;
-    overflow: hidden;
-  }
-
+  .day-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 10px; overflow: hidden; }
   .day-card.today-card { border-color: var(--accent); }
   .day-card.past-card { opacity: 0.6; }
   .day-card.done-card { border-color: var(--green); }
   .day-card.rest-card { border-color: #333; }
 
-  .day-header {
-    display: flex;
-    align-items: center;
-    padding: 14px 18px;
-    cursor: pointer;
-    gap: 14px;
-    user-select: none;
-  }
-
-  .day-date-block {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 6px 10px;
-    text-align: center;
-    min-width: 52px;
-    flex-shrink: 0;
-  }
-
+  .day-header { display: flex; align-items: center; padding: 14px 18px; cursor: pointer; gap: 14px; user-select: none; }
+  .day-date-block { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; text-align: center; min-width: 52px; flex-shrink: 0; }
   .day-date-block.today-block { background: var(--accent); border-color: var(--accent); }
-  .day-date-block.today-block .day-dow,
-  .day-date-block.today-block .day-num { color: #000; }
-
+  .day-date-block.today-block .day-dow, .day-date-block.today-block .day-num { color: #000; }
   .day-dow { font-size: 10px; font-family: 'Space Mono', monospace; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
   .day-num { font-size: 20px; font-weight: 700; font-family: 'Space Mono', monospace; color: var(--text); line-height: 1; margin-top: 2px; }
-
   .day-info { flex: 1; }
   .day-title { font-size: 14px; font-weight: 600; }
   .day-subtitle { font-size: 12px; color: var(--muted); margin-top: 3px; }
-
-  .day-check {
-    width: 22px; height: 22px;
-    border-radius: 50%;
-    border: 2px solid var(--border);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 11px;
-    flex-shrink: 0;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
+  .day-check { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 11px; flex-shrink: 0; transition: all 0.2s; }
   .day-check.done { background: var(--green); border-color: var(--green); color: #000; }
   .day-check.today-ring { border-color: var(--accent); }
 
   .day-body { padding: 0 18px 14px; display: none; }
   .day-body.open { display: block; }
-
   .day-topic-list { list-style: none; }
-
-  .day-topic-item {
-    display: flex; align-items: flex-start; gap: 10px;
-    padding: 6px 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 13px; line-height: 1.4;
-    cursor: pointer;
-  }
+  .day-topic-item { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); line-height: 1.4; }
   .day-topic-item:last-child { border-bottom: none; }
 
-  .rest-label {
-    font-size: 13px;
-    color: var(--muted);
-    font-style: italic;
-    padding: 6px 0;
-  }
+  .rest-label { font-size: 13px; color: var(--muted); font-style: italic; padding: 6px 0; }
 
-  /* Finish line */
-  .finish-line {
-    margin-top: 40px;
-    border: 1px solid var(--accent);
-    border-radius: 12px;
-    padding: 28px;
-    text-align: center;
-    background: rgba(232,184,75,0.04);
-  }
+  .finish-line { margin-top: 40px; border: 1px solid var(--accent); border-radius: 12px; padding: 28px; text-align: center; background: rgba(232,184,75,0.04); }
   .finish-line .flag-emoji { font-size: 36px; }
   .finish-line h2 { font-size: 20px; font-weight: 700; margin: 10px 0 6px; }
   .finish-line p { color: var(--muted); font-size: 14px; }
 
-  .reset-btn {
-    background: transparent;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 12px;
-    padding: 6px 14px;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: 20px;
-    display: block;
-    margin-left: auto;
-    transition: all 0.2s;
-  }
+  .reset-btn { background: transparent; border: 1px solid var(--border); color: var(--muted); font-family: 'Space Grotesk', sans-serif; font-size: 12px; padding: 6px 14px; border-radius: 6px; cursor: pointer; margin-top: 20px; display: block; margin-left: auto; transition: all 0.2s; }
   .reset-btn:hover { border-color: var(--muted); color: var(--text); }
 </style>
 </head>
@@ -385,28 +168,14 @@
 </div>
 
 <div class="stats-row">
-  <div class="stat-card">
-    <div class="stat-num" id="topics-done">0</div>
-    <div class="stat-label">Topics Done</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-num" id="topics-total">0</div>
-    <div class="stat-label">Total Topics</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-num" id="pct-done">0%</div>
-    <div class="stat-label">Complete</div>
-  </div>
+  <div class="stat-card"><div class="stat-num" id="topics-done">0</div><div class="stat-label">Topics Done</div></div>
+  <div class="stat-card"><div class="stat-num" id="topics-total">0</div><div class="stat-label">Total Topics</div></div>
+  <div class="stat-card"><div class="stat-num" id="pct-done">0%</div><div class="stat-label">Complete</div></div>
 </div>
 
 <div class="overall-progress">
-  <div class="progress-label">
-    <span>OVERALL PROGRESS</span>
-    <span id="progress-label-pct">0%</span>
-  </div>
-  <div class="bar-track">
-    <div class="bar-fill" id="progress-bar" style="width:0%"></div>
-  </div>
+  <div class="progress-label"><span>OVERALL PROGRESS</span><span id="progress-label-pct">0%</span></div>
+  <div class="bar-track"><div class="bar-fill" id="progress-bar" style="width:0%"></div></div>
 </div>
 
 <div id="week-view"></div>
@@ -420,78 +189,85 @@
 
 <button class="reset-btn" onclick="resetProgress()">Reset all progress</button>
 
-<script type="module">
-// ─── FIREBASE SYNC ──────────────────────────────────────────────────
-// 1. Create a free project at https://console.firebase.google.com
-// 2. Add a Web App, copy its config object, and paste it below.
-// 3. Build a Firestore Database (production mode), then set rules to:
-//      rules_version = '2';
-//      service cloud.firestore {
-//        match /databases/{database}/documents {
-//          match /trackers/{doc} { allow read, write: if true; }
-//        }
-//      }
-//    (Open rules are fine here since this only stores checkbox progress,
-//    not anything sensitive — but anyone with the URL could edit it.)
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
-import { getFirestore, doc, setDoc, onSnapshot }
-  from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+<script>
+// YouTube SVG icon
+const YT_ICON = `<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>`;
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDbgCxr9h3PQR_2kcxISAkk3qCFV4iN6aU",
-  authDomain: "lone-star-tracker.firebaseapp.com",
-  projectId: "lone-star-tracker",
-  storageBucket: "lone-star-tracker.firebasestorage.app",
-  messagingSenderId: "1053930847791",
-  appId: "1:1053930847791:web:d750572b1fbda8128950da"
-};
+function vlink(title, url) {
+  return `<a class="video-link" href="${url}" target="_blank" rel="noopener">${YT_ICON}${title}</a>`;
+}
 
-const fbApp = initializeApp(firebaseConfig);
-const db = getFirestore(fbApp);
-const stateDocRef = doc(db, "trackers", "precalc_state2");
-
-let cachedState = {};
-let firebaseReady = false;
-
-// Live sync: any device that writes triggers this on every other open tab/device
-onSnapshot(stateDocRef, (snap) => {
-  cachedState = snap.exists() ? (snap.data().state || {}) : {};
-  firebaseReady = true;
-  if (typeof refreshAllUI === 'function') refreshAllUI();
-});
-
-// ─── DATA ───────────────────────────────────────────────────────────
+// ─── PHASE / WEEK / TOPIC DATA WITH VIDEO LINKS ──────────────────────
 const phases = [
   {
     label: "PHASE 1", title: "Functions & Core Algebra", dates: "Jun 30 – Jul 13",
     weeks: [
       {
         label: "WEEK 1", dates: "Jun 30 – Jul 6", current: true,
+        tip: "~2 videos/day. Pause and work examples on paper — don't just watch.",
         topics: [
-          "Functions – Vertical Line Test, Ordered Pairs, Domain & Range",
-          "What Is a Function? + Evaluating Functions",
-          "Evaluating & Graphing Piecewise Functions",
-          "Increasing & Decreasing Functions + Relative Max/Min",
-          "Domain and Range from a Graph",
-          "How To Find Domain (Radicals, Fractions, Square Roots)",
-          "Difference Quotient",
-          "Function Operations",
-        ],
-        tip: "~2 videos/day. Pause and work examples on paper — don't just watch."
+          { text: "Functions – Vertical Line Test, Ordered Pairs, Domain & Range", videos: [
+            { title: "Functions & Vertical Line Test", url: "https://www.youtube.com/watch?v=LwCRRUa8yTU&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "What Is a Function?", url: "https://www.youtube.com/watch?v=52tpYl2tTqk&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Evaluating Functions + Piecewise Functions", videos: [
+            { title: "Evaluating Functions", url: "https://www.youtube.com/watch?v=nAF_GZFwU1g&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Evaluating Piecewise Functions", url: "https://www.youtube.com/watch?v=8y-oEQIVAyI&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Graphing Piecewise Functions", url: "https://www.youtube.com/watch?v=pPVnmDKcWXs&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Increasing & Decreasing Functions + Relative Max/Min", videos: [
+            { title: "Increasing & Decreasing Functions", url: "https://www.youtube.com/watch?v=78b4HOMVcKM&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Relative Maximum & Minimum", url: "https://www.youtube.com/watch?v=CUMNDNJbMqE&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Domain and Range from a Graph", videos: [
+            { title: "Domain & Range from a Graph", url: "https://www.youtube.com/watch?v=O0uNa9X9tiU&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Finding Domain – Radicals, Fractions, Square Roots", videos: [
+            { title: "Finding the Domain of a Function", url: "https://www.youtube.com/watch?v=djT6-YamHpE&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "How To Find the Range", url: "https://www.youtube.com/watch?v=J-OBJ9BGgCQ&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Difference Quotient", videos: [
+            { title: "Difference Quotient", url: "https://www.youtube.com/watch?v=9YeIFSzLaR0&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Function Operations", videos: [
+            { title: "Function Operations", url: "https://www.youtube.com/watch?v=mFNRMWFGICk&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Distance Formula & Midpoint Formula", videos: [
+            { title: "Distance Formula", url: "https://www.youtube.com/watch?v=nyZuite17Pc&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Midpoint Formula", url: "https://www.youtube.com/watch?v=Ez_-RwV9WVo&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+        ]
       },
       {
         label: "WEEK 2", dates: "Jul 7 – Jul 13",
+        tip: "Master transformations — they come back everywhere in trig.",
         topics: [
-          "Composite Functions + Decomposing Functions",
-          "Even, Odd, or Neither Functions",
-          "Linear Functions + Average Rate of Change",
-          "Inverse Functions – Intro, Finding, Verifying",
-          "Horizontal Line Test & One-to-One Functions",
-          "Graphing Inverse Functions",
-          "Transformations of Functions",
-          "Distance Formula & Midpoint Formula",
-        ],
-        tip: "Master transformations — they come back everywhere in trig."
+          { text: "Composite Functions + Decomposing Functions", videos: [
+            { title: "Composite Functions", url: "https://www.youtube.com/watch?v=ut4gr0GUs_Q&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Decomposing Functions", url: "https://www.youtube.com/watch?v=pH2ORxdCGX4&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Even, Odd, or Neither Functions", videos: [
+            { title: "Even, Odd, or Neither – The Easy Way", url: "https://www.youtube.com/watch?v=68enNRhFORc&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Linear Functions + Average Rate of Change", videos: [
+            { title: "Linear Functions", url: "https://www.youtube.com/watch?v=MXV65i9g1Xg&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Average Rate of Change", url: "https://www.youtube.com/watch?v=OE-s3nXa6Yc&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Inverse Functions – Intro, Finding, Verifying", videos: [
+            { title: "Intro to Inverse Functions", url: "https://www.youtube.com/watch?v=qgezKpQYH2w&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "How To Find the Inverse", url: "https://www.youtube.com/watch?v=2zeYEx4eTdc&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Verifying Inverse Functions", url: "https://www.youtube.com/watch?v=7FCPV5WFqEo&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Horizontal Line Test & One-to-One Functions", videos: [
+            { title: "Horizontal Line Test & 1-to-1", url: "https://www.youtube.com/watch?v=nOnd3SiYZqM&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Graphing Inverse Functions", videos: [
+            { title: "Graphing Inverse Functions", url: "https://www.youtube.com/watch?v=JnpqlXN9Whw&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Transformations of Functions", videos: [
+            { title: "Transformations of Functions", url: "https://www.youtube.com/watch?v=QhDFSLOGHKs&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+        ]
       },
     ]
   },
@@ -500,17 +276,40 @@ const phases = [
     weeks: [
       {
         label: "WEEK 3", dates: "Jul 14 – Jul 19",
+        tip: "Do 5 practice problems per topic — write it out, don't just watch.",
         topics: [
-          "Imaginary Numbers – Basic Intro + Graphing Complex Numbers",
-          "Adding, Subtracting, Multiplying, Dividing Complex Numbers",
-          "Simplifying & Solving Equations With Complex Numbers",
-          "Graphing Quadratic Functions – Transformations & Vertex Form",
-          "Finding the Vertex of a Parabola (all forms)",
-          "Max and Min Value Word Problems – Quadratics",
-          "Writing Quadratic Equations (3 points, given solutions)",
-          "Quadratic Equations – Practice Problems",
-        ],
-        tip: "Do 5 practice problems per topic — write it out, don't just watch."
+          { text: "Imaginary Numbers + Graphing & Absolute Value of Complex Numbers", videos: [
+            { title: "Imaginary Numbers – Basic Intro", url: "https://www.youtube.com/watch?v=ysVcAYo7UPI&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Graphing Complex Numbers", url: "https://www.youtube.com/watch?v=T0hBa36ZFtE&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Adding, Subtracting, Multiplying, Dividing Complex Numbers", videos: [
+            { title: "Adding & Subtracting Complex Numbers", url: "https://www.youtube.com/watch?v=SfbjqVyQljk&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Multiplying Complex Numbers", url: "https://www.youtube.com/watch?v=7cPvvCpPpGo&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Dividing Complex Numbers", url: "https://www.youtube.com/watch?v=Z8j5RDOibV4&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Simplifying & Solving Equations With Complex Numbers", videos: [
+            { title: "Simplifying Complex Numbers", url: "https://www.youtube.com/watch?v=Z8j5RDOibV4&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Solving Equations With Complex Numbers", url: "https://www.youtube.com/watch?v=dnjK4DPqh0k&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Graphing Quadratic Functions – Transformations & Vertex Form", videos: [
+            { title: "Graphing Quadratics Using Transformations", url: "https://www.youtube.com/watch?v=xoXPkfv-9z4&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Graphing in Vertex Form", url: "https://www.youtube.com/watch?v=9pMXNlRqRaY&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Finding the Vertex of a Parabola (all 3 forms)", videos: [
+            { title: "Finding the Vertex – All Forms", url: "https://www.youtube.com/watch?v=IIV-15tfmpY&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Graphing in Standard Form (x & y intercepts)", url: "https://www.youtube.com/watch?v=B7-OfcfDMSM&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Max and Min Value Word Problems – Quadratics", videos: [
+            { title: "Max & Min Word Problems", url: "https://www.youtube.com/watch?v=RjkTEyO0G-I&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Writing Quadratic Equations (given 3 points or solutions)", videos: [
+            { title: "Writing Quadratics – Vertex & Standard Form Given 3 Points", url: "https://www.youtube.com/watch?v=0A7RR0oy2ho&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Writing Quadratics Given the Solution", url: "https://www.youtube.com/watch?v=I9eLKDbc8og&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Quadratic Equations – Practice Problems", videos: [
+            { title: "Quadratic Equations Multiple Choice Practice", url: "https://www.youtube.com/watch?v=9mZpc0M2UkA&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+        ]
       },
     ]
   },
@@ -519,19 +318,42 @@ const phases = [
     weeks: [
       {
         label: "WEEK 4", dates: "Jul 20 – Jul 26",
+        tip: "High test weight. Do Descartes and Rational Zero Theorem twice.",
         topics: [
-          "Graphing Polynomial Functions – End Behavior, Multiplicity, Zeros",
-          "Intermediate Value Theorem",
-          "Polynomial Long Division + Synthetic Division",
-          "Remainder Theorem & Factor Theorem",
-          "Rational Zero Theorem – Finding All Zeros",
-          "Real & Imaginary Solutions of Polynomial Equations",
-          "Descartes Rule of Signs + Solving Polynomial Inequalities",
-          "Vertical & Horizontal & Slant Asymptotes + Graphing Rational Functions",
-          "Rational Inequalities",
-          "Direct, Inverse & Joint Variation Word Problems",
-        ],
-        tip: "High test weight. Do Descartes and Rational Zero Theorem twice."
+          { text: "Graphing Polynomial Functions – End Behavior, Multiplicity, Zeros", videos: [
+            { title: "Graphing Polynomial Functions", url: "https://www.youtube.com/watch?v=sfaAOBM5c1k&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Intermediate Value Theorem", url: "https://www.youtube.com/watch?v=FMXF86-jPKk&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Polynomial Long Division + Synthetic Division", videos: [
+            { title: "Polynomials – Long Division", url: "https://www.youtube.com/watch?v=FXgV9ySNusc&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Synthetic Division", url: "https://www.youtube.com/watch?v=bZoMz1Cy1T4&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Remainder Theorem & Factor Theorem", videos: [
+            { title: "Remainder Theorem & Synthetic Division", url: "https://www.youtube.com/watch?v=we9nVIj5Pz8&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Factor Theorem & Synthetic Division", url: "https://www.youtube.com/watch?v=NRuoH_gJL4U&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Rational Zero Theorem – Finding All Zeros", videos: [
+            { title: "Rational Zero Theorem – All Zeros", url: "https://www.youtube.com/watch?v=OeFVdlGPLtg&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Real & Imaginary Solutions of Polynomial Equations", url: "https://www.youtube.com/watch?v=E2pOcmRQ3jk&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Solving Polynomial Equations by Factoring + Synthetic Division", videos: [
+            { title: "Solving Polynomial Equations", url: "https://www.youtube.com/watch?v=BKGX_WPlBKU&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Writing Polynomial Functions With Given Zeros", url: "https://www.youtube.com/watch?v=RbcNNMOfOfY&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Descartes Rule of Signs + Solving Polynomial Inequalities", videos: [
+            { title: "Descartes Rule of Signs", url: "https://www.youtube.com/watch?v=ZMskGtfFCcg&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Solving Polynomial Inequalities", url: "https://www.youtube.com/watch?v=G8EMuK4xKKM&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Asymptotes – Vertical, Horizontal, Slant + Graphing Rational Functions", videos: [
+            { title: "Finding the Vertical Asymptote", url: "https://www.youtube.com/watch?v=wBZa0pqQhMg&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Horizontal & Slant Asymptotes", url: "https://www.youtube.com/watch?v=AbmDDx9pxUQ&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Graphing Rational Functions", url: "https://www.youtube.com/watch?v=Z6wr6Pjd3RM&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Rational Inequalities + Direct, Inverse & Joint Variation", videos: [
+            { title: "Rational Inequalities", url: "https://www.youtube.com/watch?v=mJ4-3MutJo0&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Direct, Inverse & Joint Variation Word Problems", url: "https://www.youtube.com/watch?v=MRFvKdHCYkw&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+        ]
       },
     ]
   },
@@ -540,27 +362,52 @@ const phases = [
     weeks: [
       {
         label: "WEEK 5", dates: "Jul 27 – Aug 2",
+        tip: "Learn the log rules cold — they show up in calculus too.",
         topics: [
-          "Logarithms – The Easy Way! + Writing Log Equations in Exponential Form",
-          "Change of Base Formula",
-          "Properties of Logarithms – Expanding & Condensing",
-          "Natural Logarithms",
-          "Solving Exponential Equations (basic + quadratic form)",
-          "Solving Logarithmic Equations (same base + different bases)",
-          "Graphing Logarithmic & Exponential Functions",
-          "Compound Interest (standard + continuously compounded)",
-        ],
-        tip: "Learn the log rules cold — they show up in calculus too."
+          { text: "Logarithms Intro + Writing Log Equations in Exponential Form", videos: [
+            { title: "Logarithms – The Easy Way!", url: "https://www.youtube.com/watch?v=Z5myJ8dg_rM&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Writing Log Equations in Exponential Form", url: "https://www.youtube.com/watch?v=Zw5t6BTQYRU&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Change of Base Formula", url: "https://www.youtube.com/watch?v=YBm9E3MDvPI&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Properties of Logarithms – Expanding & Condensing", videos: [
+            { title: "Properties of Logarithms", url: "https://www.youtube.com/watch?v=AAW7WRFBKdw&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Expanding Logarithmic Expressions", url: "https://www.youtube.com/watch?v=Kv2iRHVoP3M&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Condensing Logarithmic Expressions", url: "https://www.youtube.com/watch?v=ikS8kWkxMkU&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Natural Logarithms", videos: [
+            { title: "Natural Logarithms", url: "https://www.youtube.com/watch?v=2bkquMrUwYM&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Solving Exponential Equations (basic + quadratic form)", videos: [
+            { title: "Solving Exponential Equations", url: "https://www.youtube.com/watch?v=PNY7hpUDISQ&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Exponential Equations in Quadratic Form", url: "https://www.youtube.com/watch?v=LVSSdSEJEuU&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Solving Logarithmic Equations (same base + different bases)", videos: [
+            { title: "Solving Logarithmic Equations", url: "https://www.youtube.com/watch?v=fnhFCof6-PQ&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Solving Log Equations – Different Bases", url: "https://www.youtube.com/watch?v=vMKPdKNSCdA&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Graphing Logarithmic & Exponential Functions", videos: [
+            { title: "Graphing Logarithmic Functions", url: "https://www.youtube.com/watch?v=QFh6KuBJnUs&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "How To Graph Exponential Functions", url: "https://www.youtube.com/watch?v=R8YgJMR-tLM&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Compound Interest (standard + continuously compounded)", videos: [
+            { title: "Compound Interest", url: "https://www.youtube.com/watch?v=P182Abv3fOk&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Interest Compounded Continuously", url: "https://www.youtube.com/watch?v=svSyqFmFsNI&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+        ]
       },
       {
         label: "WEEK 6", dates: "Aug 3 – Aug 4",
+        tip: "Word problem sprint — these are the application questions on tests.",
         topics: [
-          "Exponential Growth and Decay Word Problems",
-          "Compound Interest & Population Growth (logs application)",
-          "Logistic Growth Function",
-          "Newton's Law of Cooling",
-        ],
-        tip: "Word problem sprint — these are the application questions on tests."
+          { text: "Exponential Growth and Decay Word Problems", videos: [
+            { title: "Exponential Growth & Decay Word Problems", url: "https://www.youtube.com/watch?v=K8aSMwZBDGM&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Compound Interest & Population Growth", url: "https://www.youtube.com/watch?v=_CkFvXaMFfc&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Logistic Growth Function + Newton's Law of Cooling", videos: [
+            { title: "Logistic Growth Function", url: "https://www.youtube.com/watch?v=6kCuVAvL1YE&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Newton's Law of Cooling", url: "https://www.youtube.com/watch?v=p2FpwPUq9yM&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+        ]
       },
     ]
   },
@@ -569,80 +416,106 @@ const phases = [
     weeks: [
       {
         label: "WEEK 7", dates: "Aug 5 – Aug 10",
+        tip: "Unit circle is non-negotiable — memorize it. Everything in trig builds on it.",
         topics: [
-          "Intro to Angles + Radians and Degrees",
-          "Coterminal Angles (radians & degrees)",
-          "Arc Length & Sector Area + Linear/Angular Speed",
-          "The Unit Circle – Basic Intro + How To Remember It Fast",
-          "Reference Angles in Radians & Degrees",
-          "Six Trig Functions – Basic Intro",
-          "Solving Right Triangles",
-          "Reciprocal, Quotient, Even/Odd, Pythagorean Identities",
-          "30-60-90 and 45-45-90 Special Triangles",
-          "Evaluating Trig Functions Using Periodic Properties",
-        ],
-        tip: "Unit circle is non-negotiable — memorize it. Everything in trig builds on it."
+          { text: "Intro to Angles + Radians and Degrees + Coterminal Angles", videos: [
+            { title: "Introduction to Angles", url: "https://www.youtube.com/watch?v=8kFGKA0YIWE&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Radians and Degrees", url: "https://www.youtube.com/watch?v=EnwWCNMuMQ4&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Coterminal Angles", url: "https://www.youtube.com/watch?v=vLqRe2pjvE0&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Arc Length & Sector Area + Linear/Angular Speed", videos: [
+            { title: "Arc Length of a Circle", url: "https://www.youtube.com/watch?v=uSalr2vFNqU&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Linear Speed & Angular Velocity", url: "https://www.youtube.com/watch?v=GQ_a0Xhp1Ms&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "The Unit Circle + How To Remember It Fast", videos: [
+            { title: "The Unit Circle – Basic Intro", url: "https://www.youtube.com/watch?v=ZffZvSH285c&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "How To Remember the Unit Circle Fast!", url: "https://www.youtube.com/watch?v=05v_4LVhP7Y&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Reference Angles in Radians & Degrees", url: "https://www.youtube.com/watch?v=2qvVJ1M-mE8&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Six Trig Functions + Solving Right Triangles", videos: [
+            { title: "The Six Trigonometric Functions", url: "https://www.youtube.com/watch?v=PUB0TaZ7bhA&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "How To Solve Right Triangles", url: "https://www.youtube.com/watch?v=nAF_GZFwU1g&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Trigonometry For Beginners!", url: "https://www.youtube.com/watch?v=yBw67Fb31Cs&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Reciprocal, Quotient, Even/Odd & Pythagorean Identities", videos: [
+            { title: "Reciprocal Identities", url: "https://www.youtube.com/watch?v=vE9UcnOGsVg&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Quotient Identities", url: "https://www.youtube.com/watch?v=vE9UcnOGsVg&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Pythagorean Identities", url: "https://www.youtube.com/watch?v=OmJ5fxyJ2E8&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "30-60-90 and 45-45-90 Special Right Triangles", videos: [
+            { title: "30-60-90 Triangles", url: "https://www.youtube.com/watch?v=eNupCXPJEjk&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "45-45-90 Triangles", url: "https://www.youtube.com/watch?v=DqSzpSyNWnw&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Evaluating Trig Functions Using Periodic Properties + Exact Values", videos: [
+            { title: "Trig Functions Using Periodic Properties", url: "https://www.youtube.com/watch?v=e78RpIvFDn4&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "How To Find Exact Values of Trig Functions", url: "https://www.youtube.com/watch?v=C4MNLkEHHDs&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "A Simple Trick To Remember Trig Values", url: "https://www.youtube.com/watch?v=vdLhsRcMoE0&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+        ]
       },
       {
         label: "WEEK 8", dates: "Aug 11 – Aug 15",
+        tip: "Final week — do the OCT Precalc Final Exam Review as your checkpoint.",
         topics: [
-          "Angle of Elevation & Depression Word Problems",
-          "Cofunction Identities + Finding Exact Values of Trig Functions",
-          "Graphing Sine and Cosine Functions",
-          "Evaluating Inverse Trig Functions",
-          "Verifying Trigonometric Identities",
-          "Sum & Difference Identities (sin, cos, tan)",
-          "Double Angle & Half Angle Formulas",
-          "Solving Trig Equations (all solutions + multiple angles)",
-          "Law of Sines + Law of Cosines",
-          "CHECKPOINT: Precalculus Final Exam Review (OCT video)",
-        ],
-        tip: "Final week — do the OCT Precalc Final Exam Review video as your checkpoint."
+          { text: "Angle of Elevation & Depression + Cofunction Identities", videos: [
+            { title: "Angle of Elevation & Depression Word Problems", url: "https://www.youtube.com/watch?v=DFkFSZKPpE0&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Cofunction Identities", url: "https://www.youtube.com/watch?v=Sxf0sPW0SZc&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Graphing Sine and Cosine Functions", videos: [
+            { title: "Graphing Trig Functions – Sine & Cosine", url: "https://www.youtube.com/watch?v=TXvS7CAr5EQ&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Evaluating Inverse Trig Functions", url: "https://www.youtube.com/watch?v=oSiMzL55CRU&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Verifying Trigonometric Identities", videos: [
+            { title: "Verifying Trig Identities", url: "https://www.youtube.com/watch?v=oBDFhHDaGn0&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Sum & Difference Identities + Double & Half Angle Formulas", videos: [
+            { title: "Sum & Difference Identities of Sin & Cos", url: "https://www.youtube.com/watch?v=0VBQnR2h8-A&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Double Angle Identities & Formulas", url: "https://www.youtube.com/watch?v=gIFd6t9zCaI&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Half Angle Formulas & Identities", url: "https://www.youtube.com/watch?v=Y3Wr8O0EBhw&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Solving Trig Equations (all solutions + multiple angles)", videos: [
+            { title: "Solving Trig Equations – All Solutions", url: "https://www.youtube.com/watch?v=ewIlsAambBc&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Trig Equations With Multiple Angles", url: "https://www.youtube.com/watch?v=LRSezxSUFKE&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Solving By Factoring & Double Angle Identities", url: "https://www.youtube.com/watch?v=YB6mQIhxT4o&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "Law of Sines + Law of Cosines", videos: [
+            { title: "Law of Sines – Basic Intro", url: "https://www.youtube.com/watch?v=DkNyqGHtzJ4&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+            { title: "Law of Cosines – SSS & SAS", url: "https://www.youtube.com/watch?v=FSTrganGkEc&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+          { text: "🏁 CHECKPOINT: Precalculus Final Exam Review (full OCT video)", videos: [
+            { title: "Precalculus Final Exam Review", url: "https://www.youtube.com/watch?v=IzZZ3b1j8KI&list=PL0o_zxa4K1BU5sTWZ2YxFhpXwsnMfMke7" },
+          ]},
+        ]
       },
     ]
   }
 ];
 
-// Build flat topic list (week-indexed)
-// Also build a day-by-day schedule: Jun 30 – Aug 15 = 47 days
-// Distribute topics across days: skip Fridays after 3pm (Jumu'ah) = lighter day
-// Sundays = rest
-
+// ─── BUILD FLAT + DAY SCHEDULE ────────────────────────────────────────
 function buildDaySchedule() {
-  // Flatten all topics in order
   let allTopicsFlat = [];
   phases.forEach((p, pi) => {
     p.weeks.forEach((w, wi) => {
       w.topics.forEach((t, ti) => {
-        allTopicsFlat.push({ key: `${pi}-${wi}-${ti}`, text: t, phase: p.label, week: w.label });
+        allTopicsFlat.push({ key: `${pi}-${wi}-${ti}`, text: t.text, videos: t.videos, phase: p.label, week: w.label });
       });
     });
   });
 
-  // Build list of dates Jun 30 – Aug 15
   const start = new Date('2026-06-30');
   const end = new Date('2026-08-15');
   let days = [];
-  for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
-    days.push(new Date(d));
-  }
+  for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) days.push(new Date(d));
 
-  // Assign topics to days
-  // Sunday = rest (0), Friday = lighter (2 topics max), else 2-3 topics
   let topicIdx = 0;
   let daySchedule = [];
-
   days.forEach(date => {
-    const dow = date.getDay(); // 0=Sun,1=Mon,...,5=Fri,6=Sat
-    const isRest = dow === 0; // Sunday rest
+    const dow = date.getDay();
+    const isRest = dow === 0;
     const isFriday = dow === 5;
     const capacity = isRest ? 0 : (isFriday ? 1 : 2);
-
     let dayTopics = [];
-    for (let i = 0; i < capacity && topicIdx < allTopicsFlat.length; i++) {
-      dayTopics.push(allTopicsFlat[topicIdx++]);
-    }
-
+    for (let i = 0; i < capacity && topicIdx < allTopicsFlat.length; i++) dayTopics.push(allTopicsFlat[topicIdx++]);
     daySchedule.push({ date: new Date(date), topics: dayTopics, isRest, isFriday });
   });
 
@@ -652,22 +525,8 @@ function buildDaySchedule() {
 const { daySchedule, allTopicsFlat } = buildDaySchedule();
 
 // ─── STATE ────────────────────────────────────────────────────────────
-function loadState() {
-  return cachedState;
-}
-function saveState(s) {
-  cachedState = s;
-  // fire-and-forget write to Firestore; local UI already updated optimistically
-  setDoc(stateDocRef, { state: s }).catch(err => console.error('Sync failed:', err));
-}
-
-// Re-renders everything from cachedState. Called on every local change AND
-// whenever a change arrives from another device/tab via onSnapshot.
-function refreshAllUI() {
-  renderWeekView();
-  renderDayView();
-  updateStats();
-}
+function loadState() { try { return JSON.parse(localStorage.getItem('precalc_v3') || '{}'); } catch { return {}; } }
+function saveState(s) { try { localStorage.setItem('precalc_v3', JSON.stringify(s)); } catch {} }
 
 function updateStats() {
   const state = loadState();
@@ -682,9 +541,7 @@ function updateStats() {
 }
 
 function countDaysLeft() {
-  const target = new Date('2026-08-15');
-  const now = new Date();
-  const diff = Math.ceil((target - now) / (1000 * 60 * 60 * 24));
+  const diff = Math.ceil((new Date('2026-08-15') - new Date()) / 86400000);
   document.getElementById('days-left').textContent = Math.max(0, diff);
 }
 
@@ -692,7 +549,18 @@ function toggleTopic(key) {
   const state = loadState();
   state[key] = !state[key];
   saveState(state);
-  refreshAllUI();
+  document.querySelectorAll(`[data-key="${key}"]`).forEach(cb => {
+    cb.classList.toggle('checked', !!state[key]);
+    cb.textContent = state[key] ? '✓' : '';
+  });
+  document.querySelectorAll(`[data-text-key="${key}"]`).forEach(el => el.classList.toggle('done-text', !!state[key]));
+  updateStats();
+}
+
+// ─── VIDEO LINKS HTML ─────────────────────────────────────────────────
+function videoLinksHTML(videos) {
+  if (!videos || !videos.length) return '';
+  return '<div class="video-links">' + videos.map(v => vlink(v.title, v.url)).join('') + '</div>';
 }
 
 // ─── WEEK VIEW ────────────────────────────────────────────────────────
@@ -703,28 +571,22 @@ function renderWeekView() {
 
   phases.forEach((phase, pi) => {
     const phaseEl = document.createElement('div');
-
-    const ph = document.createElement('div');
-    ph.className = 'phase-header';
-    ph.innerHTML = `<span class="phase-badge">${phase.label}</span><span class="phase-title">${phase.title}</span><span class="phase-dates">${phase.dates}</span>`;
-    phaseEl.appendChild(ph);
+    phaseEl.innerHTML = `<div class="phase-header"><span class="phase-badge">${phase.label}</span><span class="phase-title">${phase.title}</span><span class="phase-dates">${phase.dates}</span></div>`;
 
     phase.weeks.forEach((week, wi) => {
       const wid = `w-${pi}-${wi}`;
       const topicsDone = week.topics.filter((_, ti) => state[`${pi}-${wi}-${ti}`]).length;
       const weekComplete = topicsDone === week.topics.length;
+      const checkClass = weekComplete ? 'done' : (week.current ? 'current' : '');
 
       const card = document.createElement('div');
       card.className = 'week-card' + (week.current ? ' active-week' : '') + (weekComplete ? ' completed-week' : '');
 
-      const checkClass = weekComplete ? 'done' : (week.current ? 'current' : '');
       const header = document.createElement('div');
       header.className = 'week-header';
       header.onclick = () => {
-        const body = document.getElementById('body-' + wid);
-        const toggle = document.getElementById('toggle-' + wid);
-        const open = body.classList.toggle('open');
-        toggle.classList.toggle('open', open);
+        document.getElementById('body-' + wid).classList.toggle('open');
+        document.getElementById('toggle-' + wid).classList.toggle('open');
       };
       header.innerHTML = `
         <div class="week-check ${checkClass}">${weekComplete ? '✓' : ''}</div>
@@ -732,18 +594,17 @@ function renderWeekView() {
           <div class="week-label">${week.label}${week.current ? '<span class="current-badge">NOW</span>' : ''}</div>
           <div class="week-dates">${week.dates} &nbsp;·&nbsp; ${topicsDone}/${week.topics.length} topics</div>
         </div>
-        <div class="week-toggle${week.current ? ' open' : ''}" id="toggle-${wid}">▾</div>
-      `;
+        <div class="week-toggle${week.current ? ' open' : ''}" id="toggle-${wid}">▾</div>`;
       card.appendChild(header);
 
       const body = document.createElement('div');
       body.className = 'week-body' + (week.current ? ' open' : '');
       body.id = 'body-' + wid;
 
-      const label = document.createElement('div');
-      label.className = 'topic-section-label';
-      label.textContent = 'TOPICS / VIDEOS';
-      body.appendChild(label);
+      const lbl = document.createElement('div');
+      lbl.className = 'topic-section-label';
+      lbl.textContent = 'TOPICS / VIDEOS';
+      body.appendChild(lbl);
 
       const ul = document.createElement('ul');
       ul.className = 'topic-list';
@@ -755,18 +616,17 @@ function renderWeekView() {
         li.className = 'topic-item';
         li.innerHTML = `
           <div class="topic-cb ${isDone ? 'checked' : ''}" data-key="${key}">${isDone ? '✓' : ''}</div>
-          <span class="topic-text ${isDone ? 'done-text' : ''}" data-text-key="${key}">${topic}</span>
-        `;
-        li.addEventListener('click', () => toggleTopic(key));
+          <div class="topic-content">
+            <div class="topic-name ${isDone ? 'done-text' : ''}" data-text-key="${key}">${topic.text}</div>
+            ${videoLinksHTML(topic.videos)}
+          </div>`;
+        li.querySelector('.topic-cb').addEventListener('click', (e) => { e.stopPropagation(); toggleTopic(key); });
+        li.querySelector('.topic-content .topic-name').addEventListener('click', () => toggleTopic(key));
         ul.appendChild(li);
       });
       body.appendChild(ul);
 
-      const tip = document.createElement('div');
-      tip.className = 'daily-tip';
-      tip.innerHTML = `<strong>TIP:</strong> ${week.tip}`;
-      body.appendChild(tip);
-
+      body.innerHTML += `<div class="daily-tip"><strong>TIP:</strong> ${week.tip}</div>`;
       card.appendChild(body);
       phaseEl.appendChild(card);
     });
@@ -776,89 +636,70 @@ function renderWeekView() {
 }
 
 // ─── DAY VIEW ─────────────────────────────────────────────────────────
-const DOW_NAMES = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-const MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const DOW = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
 function renderDayView() {
   const container = document.getElementById('day-view');
   container.innerHTML = '';
   const state = loadState();
-  const today = new Date();
-  today.setHours(0,0,0,0);
-
-  // Group days by week label for sub-headers
+  const today = new Date(); today.setHours(0,0,0,0);
   let currentWeekLabel = '';
 
   daySchedule.forEach((day, di) => {
-    const dDate = new Date(day.date);
-    dDate.setHours(0,0,0,0);
+    const dDate = new Date(day.date); dDate.setHours(0,0,0,0);
     const isToday = dDate.getTime() === today.getTime();
     const isPast = dDate < today;
     const dow = day.date.getDay();
     const dayDone = day.topics.length > 0 && day.topics.every(t => state[t.key]);
 
-    // Week sub-header based on phase/week
     if (day.topics.length > 0) {
-      const weekLabel = day.topics[0].week;
-      if (weekLabel !== currentWeekLabel) {
-        currentWeekLabel = weekLabel;
+      const wl = day.topics[0].week;
+      if (wl !== currentWeekLabel) {
+        currentWeekLabel = wl;
         const wh = document.createElement('div');
         wh.className = 'phase-header';
-        wh.innerHTML = `<span class="phase-badge">${weekLabel}</span><span class="phase-dates" style="font-size:12px;color:var(--muted)">${day.topics[0].phase}</span>`;
+        wh.innerHTML = `<span class="phase-badge">${wl}</span><span class="phase-dates">${day.topics[0].phase}</span>`;
         container.appendChild(wh);
       }
-    } else if (day.isRest && currentWeekLabel !== '') {
-      // show rest under current week, no sub-header needed
     }
 
     const card = document.createElement('div');
-    let cardClass = 'day-card';
-    if (isToday) cardClass += ' today-card';
-    else if (dayDone) cardClass += ' done-card';
-    else if (isPast) cardClass += ' past-card';
-    else if (day.isRest) cardClass += ' rest-card';
-    card.className = cardClass;
+    let cc = 'day-card';
+    if (isToday) cc += ' today-card';
+    else if (dayDone) cc += ' done-card';
+    else if (isPast) cc += ' past-card';
+    else if (day.isRest) cc += ' rest-card';
+    card.className = cc;
 
     const did = 'day-' + di;
+    const mainTopic = day.topics.length > 0 ? day.topics[0].text.replace('🏁 ', '').split('–')[0].split('+')[0].trim() : (day.isRest ? 'Rest & Review' : 'Buffer');
+    const extra = day.topics.length > 1 ? ` + ${day.topics.length - 1} more` : '';
+    const topicsText = day.isRest ? 'Rest day' : (day.topics.length === 0 ? 'Buffer' : `${day.topics.filter(t=>state[t.key]).length}/${day.topics.length} done`);
+
     const header = document.createElement('div');
     header.className = 'day-header';
-    header.onclick = () => {
-      const body = document.getElementById('body-' + did);
-      if (body) body.classList.toggle('open');
-    };
-
-    const topicsText = day.isRest ? 'Rest day' : (day.topics.length === 0 ? 'Buffer' : `${day.topics.filter(t=>state[t.key]).length}/${day.topics.length} done`);
-    const mainTopic = day.topics.length > 0 ? day.topics[0].text.split('–')[0].split('+')[0].trim() : (day.isRest ? 'Rest & Review' : 'Catch-up Buffer');
-    const extraCount = day.topics.length > 1 ? ` + ${day.topics.length - 1} more` : '';
-
+    header.onclick = () => { const b = document.getElementById('body-' + did); if(b) b.classList.toggle('open'); };
     header.innerHTML = `
       <div class="day-date-block ${isToday ? 'today-block' : ''}">
-        <div class="day-dow">${DOW_NAMES[dow]}</div>
+        <div class="day-dow">${DOW[dow]}</div>
         <div class="day-num">${day.date.getDate()}</div>
       </div>
       <div class="day-info">
-        <div class="day-title">${mainTopic}${extraCount}</div>
-        <div class="day-subtitle">${MONTH_NAMES[day.date.getMonth()]} ${day.date.getDate()} &nbsp;·&nbsp; ${topicsText}${isToday ? ' &nbsp;<span style="color:var(--accent);font-weight:700">← TODAY</span>' : ''}</div>
+        <div class="day-title">${mainTopic}${extra}</div>
+        <div class="day-subtitle">${MON[day.date.getMonth()]} ${day.date.getDate()} &nbsp;·&nbsp; ${topicsText}${isToday ? ' &nbsp;<span style="color:var(--accent);font-weight:700">← TODAY</span>' : ''}</div>
       </div>
-      <div class="day-check ${dayDone ? 'done' : (isToday ? 'today-ring' : '')}">${dayDone ? '✓' : ''}</div>
-    `;
+      <div class="day-check ${dayDone ? 'done' : (isToday ? 'today-ring' : '')}">${dayDone ? '✓' : ''}</div>`;
     card.appendChild(header);
 
-    // Body
     const body = document.createElement('div');
     body.className = 'day-body' + (isToday ? ' open' : '');
     body.id = 'body-' + did;
 
     if (day.isRest) {
-      const r = document.createElement('div');
-      r.className = 'rest-label';
-      r.textContent = 'Sunday — rest, review notes, or catch up on anything from last week.';
-      body.appendChild(r);
+      body.innerHTML = '<div class="rest-label">Sunday — rest, review notes, or catch up on anything from last week.</div>';
     } else if (day.topics.length === 0) {
-      const r = document.createElement('div');
-      r.className = 'rest-label';
-      r.textContent = 'Buffer day — use this to catch up or review weak spots.';
-      body.appendChild(r);
+      body.innerHTML = '<div class="rest-label">Buffer day — use this to catch up or review weak spots.</div>';
     } else {
       const lbl = document.createElement('div');
       lbl.className = 'topic-section-label';
@@ -868,27 +709,22 @@ function renderDayView() {
 
       const ul = document.createElement('ul');
       ul.className = 'day-topic-list';
-
       day.topics.forEach(topic => {
         const isDone = !!state[topic.key];
         const li = document.createElement('li');
         li.className = 'day-topic-item';
         li.innerHTML = `
           <div class="topic-cb ${isDone ? 'checked' : ''}" data-key="${topic.key}">${isDone ? '✓' : ''}</div>
-          <span class="topic-text ${isDone ? 'done-text' : ''}" data-text-key="${topic.key}">${topic.text}</span>
-        `;
-        li.addEventListener('click', () => toggleTopic(topic.key));
+          <div class="topic-content">
+            <div class="topic-name ${isDone ? 'done-text' : ''}" data-text-key="${topic.key}">${topic.text}</div>
+            ${videoLinksHTML(topic.videos)}
+          </div>`;
+        li.querySelector('.topic-cb').addEventListener('click', (e) => { e.stopPropagation(); toggleTopic(topic.key); });
+        li.querySelector('.topic-name').addEventListener('click', () => toggleTopic(topic.key));
         ul.appendChild(li);
       });
-
       body.appendChild(ul);
-
-      if (day.isFriday) {
-        const tip = document.createElement('div');
-        tip.className = 'daily-tip';
-        tip.innerHTML = `<strong>FRIDAY:</strong> Lighter load — Jumu'ah first, one topic after.`;
-        body.appendChild(tip);
-      }
+      if (day.isFriday) body.innerHTML += `<div class="daily-tip"><strong>FRIDAY:</strong> Lighter load — Jumu'ah first, one topic after.</div>`;
     }
 
     card.appendChild(body);
@@ -905,15 +741,10 @@ function switchView(v) {
 }
 
 function resetProgress() {
-  if (confirm('Reset all progress?')) {
-    saveState({});
-    refreshAllUI();
-  }
+  if (confirm('Reset all progress?')) { saveState({}); renderWeekView(); renderDayView(); updateStats(); }
 }
 
-// ─── INIT ─────────────────────────────────────────────────────────────
-// Renders once immediately with empty state so the page isn't blank,
-// then refreshAllUI() re-renders automatically once Firestore responds.
+// Init
 renderWeekView();
 renderDayView();
 updateStats();
