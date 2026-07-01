@@ -420,7 +420,46 @@
 
 <button class="reset-btn" onclick="resetProgress()">Reset all progress</button>
 
-<script>
+<script type="module">
+// ─── FIREBASE SYNC ──────────────────────────────────────────────────
+// 1. Create a free project at https://console.firebase.google.com
+// 2. Add a Web App, copy its config object, and paste it below.
+// 3. Build a Firestore Database (production mode), then set rules to:
+//      rules_version = '2';
+//      service cloud.firestore {
+//        match /databases/{database}/documents {
+//          match /trackers/{doc} { allow read, write: if true; }
+//        }
+//      }
+//    (Open rules are fine here since this only stores checkbox progress,
+//    not anything sensitive — but anyone with the URL could edit it.)
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+import { getFirestore, doc, setDoc, onSnapshot }
+  from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDbgCxr9h3PQR_2kcxISAkk3qCFV4iN6aU",
+  authDomain: "lone-star-tracker.firebaseapp.com",
+  projectId: "lone-star-tracker",
+  storageBucket: "lone-star-tracker.firebasestorage.app",
+  messagingSenderId: "1053930847791",
+  appId: "1:1053930847791:web:d750572b1fbda8128950da"
+};
+
+const fbApp = initializeApp(firebaseConfig);
+const db = getFirestore(fbApp);
+const stateDocRef = doc(db, "trackers", "precalc_state2");
+
+let cachedState = {};
+let firebaseReady = false;
+
+// Live sync: any device that writes triggers this on every other open tab/device
+onSnapshot(stateDocRef, (snap) => {
+  cachedState = snap.exists() ? (snap.data().state || {}) : {};
+  firebaseReady = true;
+  if (typeof refreshAllUI === 'function') refreshAllUI();
+});
+
 // ─── DATA ───────────────────────────────────────────────────────────
 const phases = [
   {
@@ -614,10 +653,20 @@ const { daySchedule, allTopicsFlat } = buildDaySchedule();
 
 // ─── STATE ────────────────────────────────────────────────────────────
 function loadState() {
-  try { return JSON.parse(localStorage.getItem('precalc_state2') || '{}'); } catch { return {}; }
+  return cachedState;
 }
 function saveState(s) {
-  try { localStorage.setItem('precalc_state2', JSON.stringify(s)); } catch {}
+  cachedState = s;
+  // fire-and-forget write to Firestore; local UI already updated optimistically
+  setDoc(stateDocRef, { state: s }).catch(err => console.error('Sync failed:', err));
+}
+
+// Re-renders everything from cachedState. Called on every local change AND
+// whenever a change arrives from another device/tab via onSnapshot.
+function refreshAllUI() {
+  renderWeekView();
+  renderDayView();
+  updateStats();
 }
 
 function updateStats() {
@@ -643,16 +692,7 @@ function toggleTopic(key) {
   const state = loadState();
   state[key] = !state[key];
   saveState(state);
-  // Update all checkboxes with this key (week + day view may both show it)
-  document.querySelectorAll(`[data-key="${key}"]`).forEach(cb => {
-    if (state[key]) { cb.classList.add('checked'); cb.textContent = '✓'; }
-    else { cb.classList.remove('checked'); cb.textContent = ''; }
-  });
-  document.querySelectorAll(`[data-text-key="${key}"]`).forEach(el => {
-    if (state[key]) el.classList.add('done-text');
-    else el.classList.remove('done-text');
-  });
-  updateStats();
+  refreshAllUI();
 }
 
 // ─── WEEK VIEW ────────────────────────────────────────────────────────
@@ -866,14 +906,14 @@ function switchView(v) {
 
 function resetProgress() {
   if (confirm('Reset all progress?')) {
-    try { localStorage.removeItem('precalc_state2'); } catch {}
-    document.querySelectorAll('.topic-cb').forEach(cb => { cb.classList.remove('checked'); cb.textContent = ''; });
-    document.querySelectorAll('.topic-text').forEach(t => t.classList.remove('done-text'));
-    updateStats();
+    saveState({});
+    refreshAllUI();
   }
 }
 
 // ─── INIT ─────────────────────────────────────────────────────────────
+// Renders once immediately with empty state so the page isn't blank,
+// then refreshAllUI() re-renders automatically once Firestore responds.
 renderWeekView();
 renderDayView();
 updateStats();
