@@ -664,7 +664,10 @@ function renderWeekView() {
       });
       body.appendChild(ul);
 
-      body.innerHTML += `<div class="daily-tip"><strong>TIP:</strong> ${week.tip}</div>`;
+      const tipEl = document.createElement('div');
+      tipEl.className = 'daily-tip';
+      tipEl.innerHTML = `<strong>TIP:</strong> ${week.tip}`;
+      body.appendChild(tipEl);
       card.appendChild(body);
       phaseEl.appendChild(card);
     });
@@ -762,7 +765,12 @@ function renderDayView() {
         ul.appendChild(li);
       });
       body.appendChild(ul);
-      if (day.isFriday) body.innerHTML += `<div class="daily-tip"><strong>FRIDAY:</strong> Lighter load — Jumu'ah first, one topic after.</div>`;
+      if (day.isFriday) {
+        const fTip = document.createElement('div');
+        fTip.className = 'daily-tip';
+        fTip.innerHTML = `<strong>FRIDAY:</strong> Lighter load — Jumu'ah first, one topic after.`;
+        body.appendChild(fTip);
+      }
     }
 
     card.appendChild(body);
